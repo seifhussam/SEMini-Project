@@ -1,0 +1,78 @@
+<div class="page-header">
+  <h1>{{main.username}} Profile</h1>
+</div>
+
+<div class="panel panel-info">
+
+  <div class="panel-heading" style = "test-align:center;"><strong> User Profile </strong></div>
+
+
+<table class ="table">
+  <tr>
+    <td>Username</td>
+    <td>ID</td>
+    <td>Protfolio Name</td>
+  </tr>
+  <tr>
+    <td>{{main.username}}</td>
+    <td>{{main.useremail}}</td>
+      <td>{{main.pname}}</td>
+  </tr>
+</table>
+  </div>
+<br> <br>
+
+  <div class="page-header">
+    <h1>Do you want to fill your portfolio ? </h1>
+  </div>
+  <form ng-submit="main.addWork(addworkdata)" validate>
+    <label>Type:</label>
+    <input class="form-control"  type="text" name="username" placeholder="please enter type of work" ng-model = "main.addworkdata.type" required>
+    <br>
+
+    <label>Details:</label>
+    <input class="form-control" type="textarea"  name="username" placeholder="please enter details" ng-model = "main.addworkdata.details" required>
+    <br>
+
+    <label>Code Source:</label>
+    <input class="form-control" type="textarea"  name="username" placeholder="please enter codeSource" ng-model = "main.addworkdata.codeSource" required>
+    <br>
+
+    <label class="control-label">Select Image</label>
+  <input id="input-20" type="file" class="form-control" ng-model = "main.addworkdata.pic" >
+  <script>
+  $(document).on('ready', function() {
+      $("#input-20").fileinput({
+          browseClass: "btn btn-primary btn-block",
+          showCaption: false,
+          showRemove: false,
+          showUpload: false
+      });
+  });
+  </script>
+  <br>
+   <button class="btn btn-primary" type="submit" name="button">Add Work</button>
+
+  </form>
+
+
+<br>
+<br>
+  <div class="panel panel-info">
+
+    <div class="panel-heading" style = "test-align:center;"><strong> {{main.username}} Work </strong></div>
+
+
+  <table class ="table">
+    <tr>
+      <td>Type</td>
+      <td>details</td>
+      <td>Code Source</td>
+    </tr>
+    <tr ng-repeat="x in MyWork" >
+      <td>{{x.type}}</td>
+      <td>{{x.details}}</td>
+        <td>{{x.codeSource}}</td>
+    </tr>
+  </table>
+    </div>

@@ -1,0 +1,29 @@
+<div class="page-header">
+  <div class="jumbotron">
+  <h1>Hello {{main.username}},</h1><br>
+  <p> Here are portfolios of all MET-BI GUC students</p>
+</div>
+</div>
+<br>
+<br>
+
+<div class="panel panel-info">
+
+  <div class="panel-heading" style = "test-align:center;"><strong> Every Student's Work </strong></div>
+
+
+<table class ="table">
+  <tr>
+    <td>Username</td>
+    <td>Type</td>
+    <td>details</td>
+    <td>Code Source</td>
+  </tr>
+  <tr ng-repeat="xx in allWork" >
+      <td>{{xx.username}}</td>
+    <td>{{xx.type}}</td>
+    <td>{{xx.details}}</td>
+      <td>{{xx.codeSource}}</td>
+  </tr>
+</table>
+  </div>

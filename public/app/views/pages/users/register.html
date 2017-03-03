@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1>User Registeration</h1>
+</div>
+<form ng-submit="register.regUser(regData)" validate>
+  <label>Student ID :</label>
+  <input class="form-control"  type="text" name="username" placeholder="please enter guc id is this format xx-xxxx" ng-model = "register.regData.email" required>
+  <br>
+
+  <label>Username:</label>
+  <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model = "register.regData.username" required>
+  <br>
+  <label>Password:</label>
+  <input class ="form-control" type="password" name="password" placeholder="please enter password" ng-model = "register.regData.password" required>
+  <br>
+  <label class="control-label">Select Image</label>
+<input id="input-20" type="file" class="form-control" ng-model = "register.regData.pic" >
+<script>
+$(document).on('ready', function() {
+    $("#input-20").fileinput({
+        browseClass: "btn btn-primary btn-block",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false
+    });
+});
+</script>
+<br>
+
+<label>Portfolio Name:</label>
+<input class="form-control" type="text" name="username" placeholder="please enter portfolio name" ng-model = "register.regData.pname" required>
+<br>
+
+ <button class="btn btn-primary" type="submit" name="button">Register</button>
+
+</form>
+<br>
+
+<div class="jumbotron text-center" ng-show = "register.loading">
+  <span class ="glyphicon glyphicon-repeat spinner"></span>
+  <p>Loading...</p>
+</div>
+
+<div class="row show-hide-message" ng-show = "register.Smsg" >
+  <div class="alert alert-success">{{register.Smsg}}</div>
+</div>
+<br>
+<div class="row show-hide-message" ng-show = "register.Emsg">
+  <div class="alert alert-danger">{{register.Emsg}}</div>
+</div>
